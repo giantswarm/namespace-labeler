@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
@@ -43,11 +42,4 @@ func main() {
 	} else {
 		fmt.Println("namespace 'kube-system' has proper labels.")
 	}
-}
-
-func homeDir() string {
-	if h := os.Getenv("HOME"); h != "" {
-		return h
-	}
-	return os.Getenv("USERPROFILE") // windows
 }
